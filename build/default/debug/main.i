@@ -21254,11 +21254,36 @@ void OSCILLATOR_Initialize(void);
 void PMD_Initialize(void);
 # 1 "main.c" 2
 
+# 1 "./I2C.h" 1
+
+
+
+
+
+
+void I2C_Initialize(void);
+void I2C_Start();
+void I2C_Write(uint8_t address, uint8_t reg, uint8_t data);
+uint8_t I2C_Read(uint8_t address, uint8_t reg);
+void I2C_Stop();
+# 2 "main.c" 2
+
+
+
 
 void main(void)
 {
 
     SYSTEM_Initialize();
+    I2C_Initialize();
+    I2C_Start();
+    I2C_Write(0x6F, 0x06, 0x05);
+    I2C_Stop();
+    _delay((unsigned long)((5)*(3000000/4000.0)));
+    I2C_Start();
+    uint8_t data = I2C_Read(0x6F, 0x06);
+
+    I2C_Stop();
 
     TMR0_StartTimer();
     while (1)

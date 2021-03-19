@@ -7,7 +7,6 @@
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "mcc_generated_files/RTC6.c" 2
-# 23 "mcc_generated_files/RTC6.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -114,7 +113,7 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 23 "mcc_generated_files/RTC6.c" 2
+# 1 "mcc_generated_files/RTC6.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
@@ -176,7 +175,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 24 "mcc_generated_files/RTC6.c" 2
+# 2 "mcc_generated_files/RTC6.c" 2
 
 # 1 "mcc_generated_files/RTC6.h" 1
 # 26 "mcc_generated_files/RTC6.h"
@@ -303,7 +302,7 @@ time_t rtc6_GetTime(void);
 
 uint8_t rtc6_ReadByteEEPROM(uint8_t addr);
 void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data);
-# 25 "mcc_generated_files/RTC6.c" 2
+# 3 "mcc_generated_files/RTC6.c" 2
 
 # 1 "mcc_generated_files/mcc.h" 1
 # 49 "mcc_generated_files/mcc.h"
@@ -21317,8 +21316,8 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 99 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
-# 26 "mcc_generated_files/RTC6.c" 2
-# 92 "mcc_generated_files/RTC6.c"
+# 4 "mcc_generated_files/RTC6.c" 2
+# 70 "mcc_generated_files/RTC6.c"
 static void rtcc_write(uint8_t addr, uint8_t data);
 static uint8_t rtcc_read(uint8_t addr);
 static void rtc6_EEPRWriteLatchEnable(void);

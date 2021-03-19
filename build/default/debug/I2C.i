@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/RTC6.c"
+# 1 "I2C.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,307 +6,11 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/RTC6.c" 2
-# 23 "mcc_generated_files/RTC6.c"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
+# 1 "I2C.c" 2
+# 1 "./I2C.h" 1
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 23 "mcc_generated_files/RTC6.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 2 3
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 411 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 24 "mcc_generated_files/RTC6.c" 2
-
-# 1 "mcc_generated_files/RTC6.h" 1
-# 26 "mcc_generated_files/RTC6.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 1 3
-# 33 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 76 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long time_t;
-# 293 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef void * timer_t;
-
-
-
-
-typedef int clockid_t;
-
-
-
-
-typedef unsigned long clock_t;
-# 313 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-struct timespec { time_t tv_sec; long tv_nsec; };
-
-
-
-
-
-typedef int pid_t;
-# 33 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 2 3
-
-
-
-
-
-
-
-struct tm {
- int tm_sec;
- int tm_min;
- int tm_hour;
- int tm_mday;
- int tm_mon;
- int tm_year;
- int tm_wday;
- int tm_yday;
- int tm_isdst;
- long __tm_gmtoff;
- const char *__tm_zone;
-};
-
-clock_t clock (void);
-time_t time (time_t *);
-double difftime (time_t, time_t);
-time_t mktime (struct tm *);
-size_t strftime (char *restrict, size_t, const char *restrict, const struct tm *restrict);
-struct tm *gmtime (const time_t *);
-struct tm *localtime (const time_t *);
-char *asctime (const struct tm *);
-char *ctime (const time_t *);
-int timespec_get(struct timespec *, int);
-# 73 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 3
-size_t strftime_l (char * restrict, size_t, const char * restrict, const struct tm * restrict, locale_t);
-
-struct tm *gmtime_r (const time_t *restrict, struct tm *restrict);
-struct tm *localtime_r (const time_t *restrict, struct tm *restrict);
-char *asctime_r (const struct tm *restrict, char *restrict);
-char *ctime_r (const time_t *, char *);
-
-void tzset (void);
-
-struct itimerspec {
- struct timespec it_interval;
- struct timespec it_value;
-};
-# 102 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\time.h" 3
-int nanosleep (const struct timespec *, struct timespec *);
-int clock_getres (clockid_t, struct timespec *);
-int clock_gettime (clockid_t, struct timespec *);
-int clock_settime (clockid_t, const struct timespec *);
-int clock_nanosleep (clockid_t, int, const struct timespec *, struct timespec *);
-int clock_getcpuclockid (pid_t, clockid_t *);
-
-struct sigevent;
-int timer_create (clockid_t, struct sigevent *restrict, timer_t *restrict);
-int timer_delete (timer_t);
-int timer_settime (timer_t, int, const struct itimerspec *restrict, struct itimerspec *restrict);
-int timer_gettime (timer_t, struct itimerspec *);
-int timer_getoverrun (timer_t);
-
-extern char *tzname[2];
-
-
-
-
-
-char *strptime (const char *restrict, const char *restrict, struct tm *restrict);
-extern int daylight;
-extern long timezone;
-extern int getdate_err;
-struct tm *getdate (const char *);
-# 26 "mcc_generated_files/RTC6.h" 2
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
-# 28 "mcc_generated_files/RTC6.h" 2
-
-
-typedef struct {
-    int sec, min, hr;
-    int year, month, date, day;
-} DateTime_t;
-
-void rtc6_Initialize(void);
-
-void rtc6_EnableAlarms(_Bool alarm0, _Bool alarm1);
-void rtc6_SetAlarm0(struct tm tm_t, _Bool almpol, uint8_t mask);
-void rtc6_SetAlarm1(struct tm tm_t, _Bool almpol, uint8_t mask);
-
-void rtc6_ClearAlarm0(void);
-void rtc6_ClearAlarm1(void);
-
-void rtc6_SetTime(time_t);
-time_t rtc6_GetTime(void);
-
-uint8_t rtc6_ReadByteEEPROM(uint8_t addr);
-void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data);
-# 25 "mcc_generated_files/RTC6.c" 2
-
-# 1 "mcc_generated_files/mcc.h" 1
-# 49 "mcc_generated_files/mcc.h"
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -320,10 +24,29 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 168 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 204 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __uint24 uint24_t;
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -21026,449 +20749,192 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\\pic\\include\\xc.h" 2 3
-# 49 "mcc_generated_files/mcc.h" 2
+# 4 "./I2C.h" 2
 
-# 1 "mcc_generated_files/device_config.h" 1
-# 50 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 162 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 174 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "mcc_generated_files/mcc.h" 2
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\errno.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 2 3
-
-# 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\\pic\\include\\__null.h" 1 3
-# 9 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 2 3
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 54 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/i2c1_master.h" 1
-# 54 "mcc_generated_files/i2c1_master.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
 
 
 
 
+typedef short int16_t;
+# 173 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
 
-typedef void * va_list[1];
 
 
 
 
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
 
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
 
 
 
 
+typedef unsigned char uint8_t;
 
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
 
-int remove(const char *);
-int rename(const char *, const char *);
 
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
 
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
 
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
 
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
 
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
 
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
 
-char *fgets(char *restrict, int, FILE *restrict);
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
 
-char *gets(char *);
 
+typedef int8_t int_fast8_t;
 
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
+typedef int64_t int_fast64_t;
 
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
 
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
 
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
 
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+typedef int32_t int_least32_t;
 
-void perror(const char *);
+typedef int64_t int_least64_t;
 
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
 
-char *tmpnam(char *);
-FILE *tmpfile(void);
+typedef uint8_t uint_fast8_t;
 
+typedef uint64_t uint_fast64_t;
 
 
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
 
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
 
+typedef uint32_t uint_least32_t;
 
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+# 5 "./I2C.h" 2
 
 
+void I2C_Initialize(void);
+void I2C_Start();
+void I2C_Write(uint8_t address, uint8_t reg, uint8_t data);
+uint8_t I2C_Read(uint8_t address, uint8_t reg);
+void I2C_Stop();
+# 1 "I2C.c" 2
 
 
-
-char *tempnam(const char *, const char *);
-# 54 "mcc_generated_files/i2c1_master.h" 2
-
-
-
-
-typedef enum {
-    I2C1_NOERR,
-    I2C1_BUSY,
-    I2C1_FAIL
-
-
-} i2c1_error_t;
-
-typedef enum
-{
-    I2C1_STOP=1,
-    I2C1_RESTART_READ,
-    I2C1_RESTART_WRITE,
-    I2C1_CONTINUE,
-    I2C1_RESET_LINK
-} i2c1_operations_t;
-
-typedef uint8_t i2c1_address_t;
-typedef i2c1_operations_t (*i2c1_callback_t)(void *funPtr);
-
-
-i2c1_operations_t I2C1_CallbackReturnStop(void *funPtr);
-i2c1_operations_t I2C1_CallbackReturnReset(void *funPtr);
-i2c1_operations_t I2C1_CallbackRestartWrite(void *funPtr);
-i2c1_operations_t I2C1_CallbackRestartRead(void *funPtr);
-
-
-
-
-
-
-void I2C1_Initialize(void);
-# 101 "mcc_generated_files/i2c1_master.h"
-i2c1_error_t I2C1_Open(i2c1_address_t address);
-# 111 "mcc_generated_files/i2c1_master.h"
-i2c1_error_t I2C1_Close(void);
-# 123 "mcc_generated_files/i2c1_master.h"
-i2c1_error_t I2C1_MasterOperation(_Bool read);
-
-
-
-
-i2c1_error_t I2C1_MasterWrite(void);
-
-
-
-
-i2c1_error_t I2C1_MasterRead(void);
-# 142 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetTimeout(uint8_t timeOut);
-# 152 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetBuffer(void *buffer, size_t bufferSize);
-# 164 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetDataCompleteCallback(i2c1_callback_t cb, void *ptr);
-# 174 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetWriteCollisionCallback(i2c1_callback_t cb, void *ptr);
-# 184 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetAddressNackCallback(i2c1_callback_t cb, void *ptr);
-# 194 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetDataNackCallback(i2c1_callback_t cb, void *ptr);
-# 204 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetTimeoutCallback(i2c1_callback_t cb, void *ptr);
-# 55 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
-# 100 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "mcc_generated_files/tmr0.h"
-void TMR0_StartTimer(void);
-# 161 "mcc_generated_files/tmr0.h"
-void TMR0_StopTimer(void);
-# 196 "mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 235 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 272 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(uint8_t periodVal);
-# 308 "mcc_generated_files/tmr0.h"
-_Bool TMR0_HasOverflowOccured(void);
-# 56 "mcc_generated_files/mcc.h" 2
-
-
-# 1 "mcc_generated_files/drivers/i2c_simple_master.h" 1
-# 37 "mcc_generated_files/drivers/i2c_simple_master.h"
-uint8_t i2c_read1ByteRegister(i2c1_address_t address, uint8_t reg);
-uint16_t i2c_read2ByteRegister(i2c1_address_t address, uint8_t reg);
-void i2c_write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
-void i2c_write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
-
-void i2c_writeNBytes(i2c1_address_t address, void* data, size_t len);
-void i2c_readDataBlock(i2c1_address_t address, uint8_t reg, void *data, size_t len);
-void i2c_readNBytes(i2c1_address_t address, void *data, size_t len);
-# 58 "mcc_generated_files/mcc.h" 2
-# 73 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 86 "mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 99 "mcc_generated_files/mcc.h"
-void PMD_Initialize(void);
-# 26 "mcc_generated_files/RTC6.c" 2
-# 92 "mcc_generated_files/RTC6.c"
-static void rtcc_write(uint8_t addr, uint8_t data);
-static uint8_t rtcc_read(uint8_t addr);
-static void rtc6_EEPRWriteLatchEnable(void);
-static void rtc6_EEPRWriteLatchDisable(void);
-static uint8_t rtc6_EEPRReadStatusRegister(void);
-
-
-
-DateTime_t dateTime;
-
-static uint8_t rtcc_read(uint8_t addr) {
-    return i2c_read1ByteRegister(0x6F, addr);
+void I2C_Initialize(){
+    SSP1STAT = 0x80;
+    SSP1CON1 = 0x08;
+    SSP1CON2 = 0x00;
+    SSP1ADD = 0x06;
+    SSP1CON1bits.SSPEN = 0;
 }
 
-static void rtcc_write(uint8_t addr, uint8_t data) {
-    i2c_write1ByteRegister(0x6F, addr, data);
-    _delay((unsigned long)((5)*(3000000/4000.0)));
+void I2C_Start(){
+    SSP1CON1bits.SSPEN = 1;
+    SSP1CON2bits.SEN = 1;
+    while(SSP1CON2bits.SEN);
+    PIR3bits.SSP1IF = 0;
 }
 
-void rtc6_Initialize(void) {
-    uint8_t reg = 0;
-
-    dateTime.day = (rtcc_read(0x03) & 0x07);
-    rtcc_write(0x03, (dateTime.day | 0x08));
-    dateTime.sec = rtcc_read(0x00);
-
-
-
-    rtcc_write(0x07, 0x00 + 0x40 + 0x00);
-
-
-    rtcc_write(0x00, dateTime.sec | 0x80);
-    while (!reg) {
-        reg = rtcc_read(0x03);
-        reg &= 0x20;
+void I2C_Write(uint8_t address, uint8_t reg, uint8_t data){
+    SSP1BUF = (address << 1);
+    while(!PIR3bits.SSP1IF);
+    PIR3bits.SSP1IF = 0;
+    if(SSP1CON2bits.ACKSTAT){
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return;
     }
 
+    SSP1BUF = reg;
+    while(!PIR3bits.SSP1IF);
+    PIR3bits.SSP1IF = 0;
+    if(SSP1CON2bits.ACKSTAT){
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return;
+    }
 
-    rtcc_write(0x03, dateTime.day | (0x08 & 0xEF));
-
+    SSP1BUF = data;
+    while(!PIR3bits.SSP1IF);
+    PIR3bits.SSP1IF = 0;
 }
 
-void rtc6_EnableAlarms(_Bool alarm0, _Bool alarm1){
-    uint8_t reg = rtcc_read(0x07);
-    reg = (reg & 0xCF) | (alarm0 << 4) | (alarm1 << 5);
-    rtcc_write(0x07, reg);
+uint8_t I2C_Read(uint8_t address, uint8_t reg){
+    uint8_t data;
+
+     SSP1BUF = (address << 1);
+    while(!PIR3bits.SSP1IF);
+    PIR3bits.SSP1IF = 0;
+    if(SSP1CON2bits.ACKSTAT){
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return (0xFF);
+    }
+
+    SSP1BUF = reg;
+    while(!PIR3bits.SSP1IF);
+    PIR3bits.SSP1IF = 0;
+    if(SSP1CON2bits.ACKSTAT){
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return (0xFF);
+    }
+
+    SSP1CON2bits.RSEN = 1;
+    while(SSP1CON2bits.RSEN);
+    PIR3bits.SSP1IF = 0;
+
+    SSP1BUF = (address + 1);
+    while(!PIR3bits.SSP1IF);
+    PIR3bits.SSP1IF = 0;
+    if(SSP1CON2bits.ACKSTAT){
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return (0xFF);
+    }
+    SSP1CON2bits.RCEN = 1;
+    while(!SSP1STATbits.BF);
+    data = SSP1BUF;
+
+    SSP1CON2bits.ACKDT = 1;
+    SSP1CON2bits.ACKEN = 1;
+    while(SSP1CON2bits.ACKEN);
+
+    I2C_Stop();
+
+    return data;
 }
 
-static void rtc6_SetComponent(uint8_t location, uint8_t mask, uint8_t time){
-    uint8_t inMemory = rtcc_read(location) & mask;
-    rtcc_write(location, inMemory | (time % 10) | ((time / 10) << 4));
-}
-
-void rtc6_SetTime(time_t t) {
-
-    struct tm *tm_t;
-    memset(tm_t, 0, sizeof (tm_t));
-
-    tm_t = localtime(&t);
-    rtc6_SetComponent(0x06, 0x00, tm_t->tm_year % 100);
-    rtc6_SetComponent(0x05, 0xD0, tm_t->tm_mon + 1);
-    rtc6_SetComponent(0x04, 0x00, tm_t->tm_mday);
-    rtc6_SetComponent(0x01, 0x00, tm_t->tm_min);
-    rtc6_SetComponent(0x00, 0x80, tm_t->tm_sec);
-    rtc6_SetComponent(0x02, 0x00, tm_t->tm_hour);
-}
-
-static uint8_t rtc6_GetComponent(uint8_t location, uint8_t mask){
-    uint8_t working = rtcc_read(location) & mask;
-    return (working & 0x0F) + (((working & (mask & 0xF0)) >> 4) * 10);
-}
-
-time_t rtc6_GetTime(void) {
-    struct tm tm_t;
-    memset(&tm_t, 0, sizeof (tm_t));
-
-    tm_t.tm_year = rtc6_GetComponent(0x06, 0xFF) + 100;
-    tm_t.tm_mon = rtc6_GetComponent(0x05, 0x1F) - 1;
-    tm_t.tm_mday = rtc6_GetComponent(0x04, 0x3F);
-    tm_t.tm_hour = rtc6_GetComponent(0x02, 0x3F);
-    tm_t.tm_min = rtc6_GetComponent(0x01, 0x7F);
-    tm_t.tm_sec = rtc6_GetComponent(0x00, 0x7F);
-
-    return mktime(&tm_t);
-}
-
-void rtc6_SetAlarm0(struct tm tm_t, _Bool almpol, uint8_t mask){
-    rtcc_write(0x0A, tm_t.tm_sec);
-    rtcc_write(0x0B, tm_t.tm_min);
-    rtcc_write(0x0C, tm_t.tm_hour);
-    rtcc_write(0x0E, tm_t.tm_mday);
-    rtcc_write(0x0F, tm_t.tm_mon + 1);
-    rtcc_write(0x0D, tm_t.tm_wday | almpol << 7 | mask << 4);
-}
-
-void rtc6_ClearAlarm0(void){
-    uint8_t reg = rtcc_read(0x0D);
-    rtcc_write(0x0D, reg);
-}
-
-void rtc6_SetAlarm1(struct tm tm_t, _Bool almpol, uint8_t mask){
-    rtcc_write(0x11, tm_t.tm_sec);
-    rtcc_write(0x12, tm_t.tm_min);
-    rtcc_write(0x13, tm_t.tm_hour);
-    rtcc_write(0x15, tm_t.tm_mday);
-    rtcc_write(0x16, tm_t.tm_mon + 1);
-    rtcc_write(0x14, tm_t.tm_wday | almpol << 7 | mask << 4);
-}
-
-void rtc6_ClearAlarm1(void){
-    uint8_t reg = rtcc_read(0x14);
-    rtcc_write(0x14, reg);
-}
-
-
-
-static void rtc6_EEPRWriteLatchEnable(void) {
-    i2c_write1ByteRegister(0x64, STATUS, 0x00);
-}
-
-static void rtc6_EEPRWriteLatchDisable(void) {
-    i2c_write1ByteRegister(0x64, STATUS, 0x0C);
-}
-
-static uint8_t rtc6_EEPRReadStatusRegister(void) {
-    i2c_read1ByteRegister(0x64, STATUS);
-}
-
-uint8_t rtc6_ReadByteEEPROM(uint8_t addr) {
-    uint8_t stat_reg;
-
-    rtc6_EEPRWriteLatchDisable();
-
-    do {
-        stat_reg = rtc6_EEPRReadStatusRegister();
-    } while ((stat_reg & 0x03) != 0x00);
-
-    return i2c_read1ByteRegister(0x64, addr);
-}
-
-void rtc6_WriteByteEEPROM(uint8_t addr, uint8_t data) {
-    uint8_t stat_reg;
-
-    rtc6_EEPRWriteLatchEnable();
-
-    do {
-        stat_reg = rtc6_EEPRReadStatusRegister();
-    } while ((stat_reg & 0x03) != 0x02);
-
-    i2c_write1ByteRegister(0x64, addr, data);
-
-    rtc6_EEPRWriteLatchDisable();
+void I2C_Stop(){
+    SSP1CON2bits.PEN = 0;
+    while(SSP1CON2bits.PEN);
+    SSP1CON1bits.SSPEN = 0;
+    SSP1CON2bits.RCEN = 0;
 }

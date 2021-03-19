@@ -21260,11 +21260,11 @@ void PMD_Initialize(void);
 void SYSTEM_Initialize(void)
 {
     PMD_Initialize();
-    I2C1_Initialize();
+
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     TMR0_Initialize();
-    rtc6_Initialize();
+
 }
 
 void OSCILLATOR_Initialize(void)

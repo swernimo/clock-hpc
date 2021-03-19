@@ -2,8 +2,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "99 mcc_generated_files/mcc.h
 [; ;mcc_generated_files/mcc.h: 99: void PMD_Initialize(void);
 [v _PMD_Initialize `(v ~T0 @X0 0 ef ]
-"89 mcc_generated_files/drivers/.././i2c1_master.h
-[v _I2C1_Initialize `(v ~T0 @X0 0 ef ]
 "162 mcc_generated_files/pin_manager.h
 [; ;mcc_generated_files/pin_manager.h: 162: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
@@ -13,9 +11,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "100 mcc_generated_files/tmr0.h
 [; ;mcc_generated_files/tmr0.h: 100: void TMR0_Initialize(void);
 [v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
-"35 mcc_generated_files/RTC6.h
-[; ;mcc_generated_files/RTC6.h: 35: void rtc6_Initialize(void);
-[v _rtc6_Initialize `(v ~T0 @X0 0 ef ]
 "23507 C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\pic\include\proc\pic16f18875.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\pic\include\proc\pic16f18875.h: 23507: extern volatile unsigned char OSCCON1 __attribute__((address(0x88D)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@2189 ]
@@ -1698,9 +1693,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "52
 [; ;mcc_generated_files/mcc.c: 52:     PMD_Initialize();
 [e ( _PMD_Initialize ..  ]
-"53
-[; ;mcc_generated_files/mcc.c: 53:     I2C1_Initialize();
-[e ( _I2C1_Initialize ..  ]
 "54
 [; ;mcc_generated_files/mcc.c: 54:     PIN_MANAGER_Initialize();
 [e ( _PIN_MANAGER_Initialize ..  ]
@@ -1710,9 +1702,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56
 [; ;mcc_generated_files/mcc.c: 56:     TMR0_Initialize();
 [e ( _TMR0_Initialize ..  ]
-"57
-[; ;mcc_generated_files/mcc.c: 57:     rtc6_Initialize();
-[e ( _rtc6_Initialize ..  ]
 "58
 [; ;mcc_generated_files/mcc.c: 58: }
 [e :UE 1633 ]

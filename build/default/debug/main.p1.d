@@ -6,4 +6,5 @@ mcc_generated_files/pin_manager.h  \
 mcc_generated_files/i2c1_master.h  \
 mcc_generated_files/tmr0.h  \
 mcc_generated_files/RTC6.h  \
-mcc_generated_files/drivers/i2c_simple_master.h 
+mcc_generated_files/drivers/i2c_simple_master.h  \
+I2C.h 
