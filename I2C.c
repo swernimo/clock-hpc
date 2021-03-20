@@ -1,4 +1,5 @@
 #include "I2C.h"
+#include "Utilities.h"
 
 void I2C_Initialize(){
     SSP1STAT = 0x80;
@@ -42,7 +43,7 @@ void I2C_Write(uint8_t address, uint8_t reg, uint8_t data){
 uint8_t I2C_Read(uint8_t address, uint8_t reg){
     uint8_t data;
     
-     SSP1BUF = (address << 1);
+    SSP1BUF = (address << 1);
     while(!PIR3bits.SSP1IF);
     PIR3bits.SSP1IF = 0;
     if(SSP1CON2bits.ACKSTAT){
@@ -64,7 +65,9 @@ uint8_t I2C_Read(uint8_t address, uint8_t reg){
     while(SSP1CON2bits.RSEN);
     PIR3bits.SSP1IF = 0;
     
-    SSP1BUF = (address + 1);
+    address = (address << 1); //shift left 1 bit to clear 7th bit
+    address |= 0x01; //bitwise OR to set 7th bit a 1 (read is 1))
+    SSP1BUF = address;
     while(!PIR3bits.SSP1IF);
     PIR3bits.SSP1IF = 0;
     if(SSP1CON2bits.ACKSTAT){

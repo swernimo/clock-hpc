@@ -1,4 +1,4 @@
-# 1 "I2C.c"
+# 1 "Utilities.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "I2C.c" 2
-# 1 "./I2C.h" 1
+# 1 "Utilities.c" 2
+# 1 "./Utilities.h" 1
 
 
 
@@ -20749,7 +20749,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC16F1xxxx_DFP/1.4.119/xc8\\pic\\include\\xc.h" 2 3
-# 4 "./I2C.h" 2
+# 4 "./Utilities.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
@@ -20836,119 +20836,23 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "./I2C.h" 2
-
-
-void I2C_Initialize(void);
-void I2C_Start();
-void I2C_Write(uint8_t address, uint8_t reg, uint8_t data);
-uint8_t I2C_Read(uint8_t address, uint8_t reg);
-void I2C_Stop();
-# 1 "I2C.c" 2
-
-# 1 "./Utilities.h" 1
-
-
-
-
+# 5 "./Utilities.h" 2
 
 
 uint8_t SetBit(uint8_t data, int position);
 uint8_t ClearBit(uint8_t data, int position);
 uint8_t ToggleBit(uint8_t data, int position);
-# 2 "I2C.c" 2
+# 1 "Utilities.c" 2
 
 
-void I2C_Initialize(){
-    SSP1STAT = 0x80;
-    SSP1CON1 = 0x08;
-    SSP1CON2 = 0x00;
-    SSP1ADD = 0x06;
-    SSP1CON1bits.SSPEN = 0;
+uint8_t SetBit(uint8_t data, int position){
+    return (data |= 1 << position);
 }
 
-void I2C_Start(){
-    SSP1CON1bits.SSPEN = 1;
-    SSP1CON2bits.SEN = 1;
-    while(SSP1CON2bits.SEN);
-    PIR3bits.SSP1IF = 0;
+uint8_t ClearBit(uint8_t data, int position){
+    return (data &= ~(1 << position));
 }
 
-void I2C_Write(uint8_t address, uint8_t reg, uint8_t data){
-    SSP1BUF = (address << 1);
-    while(!PIR3bits.SSP1IF);
-    PIR3bits.SSP1IF = 0;
-    if(SSP1CON2bits.ACKSTAT){
-        SSP1CON2bits.PEN = 1;
-        while(SSP1CON2bits.PEN);
-        return;
-    }
-
-    SSP1BUF = reg;
-    while(!PIR3bits.SSP1IF);
-    PIR3bits.SSP1IF = 0;
-    if(SSP1CON2bits.ACKSTAT){
-        SSP1CON2bits.PEN = 1;
-        while(SSP1CON2bits.PEN);
-        return;
-    }
-
-    SSP1BUF = data;
-    while(!PIR3bits.SSP1IF);
-    PIR3bits.SSP1IF = 0;
-}
-
-uint8_t I2C_Read(uint8_t address, uint8_t reg){
-    uint8_t data;
-
-    SSP1BUF = (address << 1);
-    while(!PIR3bits.SSP1IF);
-    PIR3bits.SSP1IF = 0;
-    if(SSP1CON2bits.ACKSTAT){
-        SSP1CON2bits.PEN = 1;
-        while(SSP1CON2bits.PEN);
-        return (0xFF);
-    }
-
-    SSP1BUF = reg;
-    while(!PIR3bits.SSP1IF);
-    PIR3bits.SSP1IF = 0;
-    if(SSP1CON2bits.ACKSTAT){
-        SSP1CON2bits.PEN = 1;
-        while(SSP1CON2bits.PEN);
-        return (0xFF);
-    }
-
-    SSP1CON2bits.RSEN = 1;
-    while(SSP1CON2bits.RSEN);
-    PIR3bits.SSP1IF = 0;
-
-    address = (address << 1);
-    address |= 0x01;
-    SSP1BUF = address;
-    while(!PIR3bits.SSP1IF);
-    PIR3bits.SSP1IF = 0;
-    if(SSP1CON2bits.ACKSTAT){
-        SSP1CON2bits.PEN = 1;
-        while(SSP1CON2bits.PEN);
-        return (0xFF);
-    }
-    SSP1CON2bits.RCEN = 1;
-    while(!SSP1STATbits.BF);
-    data = SSP1BUF;
-
-    SSP1CON2bits.ACKDT = 1;
-    SSP1CON2bits.ACKEN = 1;
-    while(SSP1CON2bits.ACKEN);
-
-    I2C_Stop();
-
-    return data;
-}
-
-void I2C_Stop(){
-    SSP1CON2bits.PEN = 0;
-    while(SSP1CON2bits.PEN);
-    SSP1CON1bits.SSPEN = 0;
-    SSP1CON2bits.RCEN = 0;
+uint8_t ToggleBit(uint8_t data, int position){
+    return (data ^= 1 << position);
 }
