@@ -10,13 +10,8 @@ void main(void)
     // initialize the device
     SYSTEM_Initialize();
     I2C_Initialize();
-    I2C_Start();
-    I2C_Write(RTCC_ADDR, RTCC_HOUR, 0x38);
-    I2C_Stop();
-    __delay_ms(5);
-    I2C_Start();
-    uint8_t data = I2C_Read(RTCC_ADDR, RTCC_HOUR);
-    I2C_Stop();
+//    I2C_Write(RTCC_ADDR, RTCC_HOUR, 0x38);
+//    uint8_t data = I2C_Read(RTCC_ADDR, RTCC_HOUR);
     TMR0_StartTimer();
     while (1)
     {
